@@ -11,7 +11,7 @@ namespace AmarothLauncher
 {
     public partial class MainWindow : Form
     {
-        // For sending outputs and gettng config settings.
+        //用于发送输出和获取配置设置。
         OutputWriter o = OutputWriter.Instance;
         Config c = Config.Instance;
         FileHandler handler;
@@ -32,7 +32,7 @@ namespace AmarothLauncher
         }
 
         /// <summary>
-        /// Sets values of window elements to values set in config.
+        /// 将窗口元素的值设置为在配置中设置的值。
         /// </summary>
         private void LoadConfig()
         {
@@ -44,8 +44,6 @@ namespace AmarothLauncher
             updateButt.Text = c.SubElText("MainWindow", "UpdateButton");
             webButt.Text = c.SubElText("MainWindow", "WebpageButton");
             regButt.Text = c.SubElText("MainWindow", "RegistrationButton");
-            launcherInfoButt.Text = c.SubElText("MainWindow", "LauncherInstructionsButton");
-            delBackButt.Text = c.SubElText("MainWindow", "DeleteBackupsButton");
             changelogEditButt.Text = c.SubElText("MainWindow", "ChangelogEditorButton");
             changelogBrowserButt.Text = c.SubElText("MainWindow", "ChangelogBrowserButton");
             launchButt.Text = c.SubElText("MainWindow", "LaunchButton");
@@ -60,7 +58,7 @@ namespace AmarothLauncher
 
         #region Self-update methods...
         /// <summary>
-        /// Checks if version from Output.cs is same/newer than version from VersionPath file. Also deletes possible backup of older Launcher version.
+        /// 检查Output.cs中的版本是否与VersionPath文件中的版本相同/更新。同时删除旧启动程序版本的可能备份。
         /// </summary>
         private bool IsUpToDate()
         {
@@ -86,7 +84,7 @@ namespace AmarothLauncher
         }
 
         /// <summary>
-        /// Renames Launcher's files and downloads new ones. Unzips them and restarts a Launcher.
+        /// 重命名登录器的文件并下载新文件。解压缩并重启登录器。
         /// </summary>
         private void UpdateSelf()
         {
@@ -94,7 +92,7 @@ namespace AmarothLauncher
             string exeName = cwd + "\\" + AppDomain.CurrentDomain.FriendlyName;
             MessageBox.Show(c.SubElText("Messages", "OutdatedLauncher"));
 
-            // Clean up possible mess in the way.
+            //清理可能出现的乱七八糟的东西。
             if (File.Exists(cwd + "\\OldLauncher.exe"))
                 File.Delete(cwd + "\\OldLauncher.exe");
             if (File.Exists(cwd + "\\OldLauncherConfig.xml"))
@@ -102,7 +100,7 @@ namespace AmarothLauncher
             if (File.Exists(cwd + "\\OldLauncherIcon.ico"))
                 File.Delete(cwd + "\\OldLauncherIcon.ico");
 
-            // Backup current files.
+            // 备份当前文件。
             if (File.Exists(exeName))
                 File.Move(exeName, cwd + "\\OldLauncher.exe");
             if (File.Exists(cwd + "\\LauncherConfig.xml"))
@@ -113,13 +111,13 @@ namespace AmarothLauncher
             {
                 if (File.Exists(cwd + "\\Launcher.zip"))
                     File.Delete(cwd + "\\Launcher.zip");
-                // Download new Launcher.
+                // 下载新登录器.
                 using (var client = new AmWebClient(3000))
                 {
                     client.DownloadFile(c.SubElText("Paths", "LauncherPath"), cwd + "\\Launcher.zip");
                 }
 
-                // Unzip new Launcher.
+                // 解压新登录器.
                 Shell32.Shell objShell = new Shell32.Shell();
                 Shell32.Folder destinationFolder = objShell.NameSpace(cwd);
                 Shell32.Folder sourceFile = objShell.NameSpace(cwd + "\\Launcher.zip");
@@ -128,17 +126,17 @@ namespace AmarothLauncher
                     destinationFolder.CopyHere(zipFile, 4 | 16);
                 }
 
-                // Remove zip.
+                // 删除压缩包文件.
                 File.Delete(cwd + "\\Launcher.zip");
 
-                // Start a new Launcher.
+                // 启动新登录器.
                 Process.Start(exeName);
                 newsPictureBox.CancelAsync();
                 Close();
             }
             catch (Exception e)
             {
-                // Return things to previous state.
+                // 改回原来的状态
                 if (File.Exists(cwd + "\\OldLauncher.exe"))
                     File.Move(cwd + "\\OldLauncher.exe", exeName);
                 if (File.Exists(cwd + "\\OldLauncherConfig.xml"))
@@ -154,7 +152,7 @@ namespace AmarothLauncher
 
         #region Progress and size labels updates...
         /// <summary>
-        /// When download is running, call UI updates of speed and progress.
+        /// 下载运行时，调用UI更新速度和进度。
         /// </summary>
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -164,7 +162,7 @@ namespace AmarothLauncher
         }
 
         /// <summary>
-        /// Sets progress label to match amount of files have been already downloaded.
+        /// 将进度标签设置为与已下载的文件量匹配。
         /// </summary>
         private void UpdateProgressLabel()
         {
@@ -177,8 +175,8 @@ namespace AmarothLauncher
         long neededSize;
         long downloadSpeed;
         /// <summary>
-        /// Sets speed label to current download speed and estimated time remaining.
-        /// Download speed measuring isn't done in a very effective and accurate way though.
+        /// 将速度标签设置为当前下载速度和估计剩余时间。
+        /// 下载速度测量并不是非常有效和准确的方法。
         /// </summary>
         private void UpdateSpeedAndTime()
         {
@@ -193,7 +191,7 @@ namespace AmarothLauncher
         }
 
         /// <summary>
-        /// Updates label with % downloaded, size downloaded and size left.
+        /// 使用已下载百分比、已下载大小和剩余大小更新标签。
         /// </summary>
         private void UpdatePercentage()
         {
@@ -208,7 +206,7 @@ namespace AmarothLauncher
         }
 
         /// <summary>
-        /// Returns a string version of remaining time in most reasonable units.
+        /// 以最合理的单位返回剩余时间的字符串版本。
         /// </summary>
         private string TimeRemaining()
         {
@@ -230,7 +228,7 @@ namespace AmarothLauncher
         }
 
         /// <summary>
-        /// Updates a label with sizes of outdated/missing & selected optional and non-optional sizes.
+        /// 使用过时/丢失的尺寸更新标签，并选择可选尺寸和非可选尺寸。
         /// </summary>
         private void UpdateOptionalSizeLabel()
         {
@@ -272,7 +270,7 @@ namespace AmarothLauncher
                         updateButt.Enabled = true;
                         UpdateOptionalSizeLabel();
                     }
-                // Outputs for debugging purpouses. Keep them commented in releases.
+                // 用于调试目的的输出。在发行版中保留他们的评论。
                 // handler.OutputServerFilelist();
                 // handler.OutputOptionalGroups();
             }
@@ -339,8 +337,8 @@ namespace AmarothLauncher
         }
 
         /// <summary>
-        /// Checks if login and password for FTP were already succesfully entried.
-        /// If they were, opens Changelog Editor. Otherwise login dialog is created/shown.
+        /// 检查是否已成功输入FTP的登录名和密码。
+        /// 如果是，则打开更改日志编辑器。否则将创建/显示登录对话框。
         /// </summary>
         public void changelogEditButt_Click(object sender, EventArgs e)
         {
@@ -416,5 +414,35 @@ namespace AmarothLauncher
             // c.OutputContent();
         }
         #endregion
+
+        private void MainWindow_DragLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelMain_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void panelMain_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelLeftMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelMain_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

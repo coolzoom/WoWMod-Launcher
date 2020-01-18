@@ -74,5 +74,10 @@ namespace AmarothLauncher.GUI
             mainWindow.ftpLoginWindow = null;
         }
         #endregion
+
+        private void panelPassword_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

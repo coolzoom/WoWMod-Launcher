@@ -4,7 +4,7 @@ using System.Net;
 namespace AmarothLauncher.Core
 {
     /// <summary>
-    /// WebClient with changeable Timeout.
+    /// 具有可变超时的WebClient。
     /// </summary>
     public class AmWebClient : WebClient
     {
@@ -12,12 +12,12 @@ namespace AmarothLauncher.Core
         public int Timeout { get; set; }
 
         /// <summary>
-        /// Creates a new WebClient with default 60s timeout.
+        /// 创建一个默认60秒超时的新WebClient。
         /// </summary>
         public AmWebClient() : this(60000) { }
 
         /// <summary>
-        /// Creates a new WebClient with given timeout in miliseconds.
+        /// 创建具有给定超时（毫秒）的新WebClient。
         /// </summary>
         /// <param name="timeout"></param>
         public AmWebClient(int timeout)

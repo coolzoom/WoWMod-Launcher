@@ -23,112 +23,112 @@
   <!--Paths to files and folders Launcher will work with. They are commonly all !CASE SENSITIVE!-->
   <Paths>
     <!--FilelistPath: Path to text filelist.-->
-    <FilelistPath>http://www.example.com/files/filelist.conf</FilelistPath>
+    <FilelistPath>http://www.xxx.com/LauncherWebFolder/filelist.conf</FilelistPath>
 
     <!--VersionPath: Path to text file which contains your Lancher's current version (version is a double value with . as separator!-->
-    <VersionPath>http://www.example.com/files/launcherversion.conf</VersionPath>
+    <VersionPath>http://www.xxx.com/LauncherWebFolder/launcherversion.conf</VersionPath>
 
     <!--LauncherPath: Path to a zip file with Launcher files - used if Launcher finds itself outdated.-->
-    <LauncherPath>http://www.exeample.com/files/Launcher.zip</LauncherPath>
+    <LauncherPath>http://www.xxx.com/LauncherWebFolder/Launcher.zip</LauncherPath>
 
     <!--FilesRootPath: Path to folder with files. Paths in filelist are relative to this path.-->
-    <FilesRootPath>http://www.example.com/files/</FilesRootPath>
+    <FilesRootPath>http://www.xxx.com/LauncherWebFolder/</FilesRootPath>
 
     <!--ChangelogPath: !HTTP! path to changelog XML file.-->
-    <ChangelogPath>http://www.example.com/files/changelog.xml</ChangelogPath>
+    <ChangelogPath>http://www.xxx.com/LauncherWebFolder/changelog.xml</ChangelogPath>
 
     <!--ChangelogFTPPath: !Full! !FTP! path to folder in which changelog is. Notice that //www/ part. You may want to use an IP instead of a domain name.-->
-    <ChangelogFTPPath>ftp://ftp.example.com//www/files/</ChangelogFTPPath>
+    <ChangelogFTPPath>ftp://ftp.www.xxx.com/</ChangelogFTPPath>
 
     <!--Webpage: URL which is to be opened when user clicks on Project webpage button.-->
-    <Webpage>http://www.example.com</Webpage>
+    <Webpage>http://www.xxx.com</Webpage>
 
     <!--Registration: URL which is to be opened when user clicks on Registration button.-->
-    <Registration>http://reg.example.com</Registration>
+    <Registration>http://www.xxx.com</Registration>
 
     <!--Instructions: URL which is to be opened when user clicks on Launcher manual button.-->
-    <Instructions>http://www.example.com/launchermanual/</Instructions>
+    <Instructions>http://www.xxx.com/launchermanual/</Instructions>
 
     <!--HelloImage: URL to image which is to be displayed in Main window (latest news image). Clicking on it opens a changelog browser.-->
-    <HelloImage>http://www.example.com/files/hello.jpg</HelloImage>
+    <HelloImage>http://www.xxx.com/LauncherWebFolder/hello.jpg</HelloImage>
   </Paths>
 
   <!--Visual settings for Main Window.-->
   <MainWindow>
     <!--WindowName: Name of main window. Change this to match your project's name.-->
-    <WindowName>Amaroth's Launcher 1.1</WindowName>
+    <WindowName>MoonSun登录器</WindowName>
 
-    <OutputBox>Text output:</OutputBox>
-    <OptionalBox>Optional files:</OptionalBox>
-    <CheckForUpdatesButton>Check for updates</CheckForUpdatesButton>
-    <UpdateButton>Update</UpdateButton>
-    <WebpageButton>Project webpage</WebpageButton>
-    <RegistrationButton>Registration</RegistrationButton>
-    <LauncherInstructionsButton>Launcher manual</LauncherInstructionsButton>
-    <DeleteBackupsButton>Delete .ext_ backups</DeleteBackupsButton>
-    <ChangelogEditorButton>Changelog editor</ChangelogEditorButton>
-    <ChangelogBrowserButton>Changelog browser</ChangelogBrowserButton>
-    <LaunchButton>Launch</LaunchButton>
-    <ProgressText>Downloading: </ProgressText>
+    <OutputBox>温馨提示:</OutputBox>
+    <OptionalBox>可选文件:</OptionalBox>
+    <CheckForUpdatesButton>检查更新</CheckForUpdatesButton>
+    <UpdateButton>更    新</UpdateButton>
+    <WebpageButton>游戏主页</WebpageButton>
+    <RegistrationButton>账号注册</RegistrationButton>
+   
+    
+    <ChangelogEditorButton>编辑日志</ChangelogEditorButton>
+    <ChangelogBrowserButton>浏览日志</ChangelogBrowserButton>
+    <LaunchButton>启动游戏</LaunchButton>
+    <ProgressText>正在下载: </ProgressText>
     <ProgressSeparator> / </ProgressSeparator>
     <DownloadSpeedUnits>/s, </DownloadSpeedUnits>
-    <remaining>remaining</remaining>
-    <downloaded>downloaded, </downloaded>
-    <ToolTipTotalSize>Total size: </ToolTipTotalSize>
-    <PanelTotalSize>Total size of outdated:</PanelTotalSize>
-    <LabelTotalSizeOpt>Chosen optionals: </LabelTotalSizeOpt>
-    <LabelTotalSizeNonOpt>Non-optionals: </LabelTotalSizeNonOpt>
+    <remaining>还需</remaining>
+    <downloaded>已下载, </downloaded>
+    <ToolTipTotalSize>总大小: </ToolTipTotalSize>
+    <PanelTotalSize>需更新文件大小:</PanelTotalSize>
+    <LabelTotalSizeOpt>已选择: </LabelTotalSizeOpt>
+    <LabelTotalSizeNonOpt>未选择: </LabelTotalSizeNonOpt>
     <second> s </second>
     <minute> m </minute>
     <hour> h </hour>
-    <Complete>Download complete!</Complete>
-    <Errors>Errors occured!</Errors>
+    <Complete>下载完成!</Complete>
+    <Errors>出现错误!</Errors>
   </MainWindow>
 
   <!--Visual settings for Changelog Editor. A lot of those are used by Changelog Browser as well.-->
   <ChangelogEditor>
-    <WindowName>Changelog Editor</WindowName>
-    <ChangelogEntries>Changelog entries:</ChangelogEntries>
-    <DateColumn>Date</DateColumn>
-    <HeadingColumn>Heading</HeadingColumn>
+    <WindowName>编辑日志</WindowName>
+    <ChangelogEntries>日志列表:</ChangelogEntries>
+    <DateColumn>时间</DateColumn>
+    <HeadingColumn>标题</HeadingColumn>
     <Date>Date:</Date>
 
     <!--DateFormat: Carefully with this. MM for months, mm for minutes. You can use your own format, but it must be correct. Changelog's data must also be compatible with this, if your changelog isn't empty when this is being changed!-->
     <DateFormat>yyyy.MM.dd hh:mm</DateFormat>
 
-    <PictureURL>Picture URL:</PictureURL>
-    <Heading>Heading:</Heading>
-    <PicturePreview>Picture preview:</PicturePreview>
-    <Description>Description:</Description>
-    <EditEntryButton>Edit entry</EditEntryButton>
-    <DeleteEntryButton>Delete entry</DeleteEntryButton>
-    <CreateEntryButton>Create entry</CreateEntryButton>
-    <SaveEntryButton>Save entry</SaveEntryButton>
-    <TestPictureButton>Test picture</TestPictureButton>
-    <CancelButton>Cancel changes</CancelButton>
-    <SaveButton>Save changelog</SaveButton>
+    <PictureURL>图片地址:</PictureURL>
+    <Heading>标题:</Heading>
+    <PicturePreview>图片预览:</PicturePreview>
+    <Description>内容:</Description>
+    <EditEntryButton>编辑日志</EditEntryButton>
+    <DeleteEntryButton>删除日志</DeleteEntryButton>
+    <CreateEntryButton>创建日志</CreateEntryButton>
+    <SaveEntryButton>保存文字</SaveEntryButton>
+    <TestPictureButton>加载图片</TestPictureButton>
+    <CancelButton>取消编辑</CancelButton>
+    <SaveButton>保存日志</SaveButton>
   </ChangelogEditor>
 
   <!--Visual settings for Changelog Browser.-->
   <ChangelogBrowser>
-    <WindowName>Changelog Browser</WindowName>
-    <InfoText>Click on an entry in entries list in order to display it.</InfoText>
-    <Picture>Picture:</Picture>
+    <WindowName>浏览日志</WindowName>
+    <InfoText>请点击日志列表对应日期或标题查看日志.</InfoText>
+    <Picture>图片:</Picture>
   </ChangelogBrowser>
 
   <!--Visual settings for authentization dialog window for Changelog Editor.-->
   <FTPLoginWindow>
-    <WindowName>Login to FTP</WindowName>
-    <Login>Login:</Login>
-    <Password>Password:</Password>
-    <OKButton>OK</OKButton>
-    <CancelButton>Cancel</CancelButton>
+    <WindowName>登录FTP</WindowName>
+    <Login>用户名:</Login>
+    <Password>密码:</Password>
+    <OKButton>确定</OKButton>
+    <CancelButton>取消</CancelButton>
   </FTPLoginWindow>
 
   <!--Various messages which can be output by Launcher.-->
   <Messages>
     <!--HelloMessage: Please, leave this here. If you want to add anything, add it behind original message.-->
-    <HelloMessage>This Launcher was coded by Amaroth from www.model-changing.net.</HelloMessage>
+    <HelloMessage>登录器启动后，请点击“检查更新”，待“更新”按钮亮起，点击“更新”后再点击“进入游戏”————MoonSun.</HelloMessage>
 
     <XmlNotOpened>Default settings are being used, because LauncherConfig.xml could not be loaded. Launcher can't continue. Get a new config file!</XmlNotOpened>
     <ChangelogNotOpened>Failed to open a changelog file on web.</ChangelogNotOpened>

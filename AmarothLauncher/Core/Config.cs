@@ -6,13 +6,13 @@ using System.Xml;
 namespace AmarothLauncher.Core
 {
     /// <summary>
-    /// Singleton responsible for getting config settings or generating default ones.
+    /// Singleton负责获取配置设置或生成默认设置。
     /// </summary>
     public class Config
     {
         private static Config instance;
 
-        // Launcher's version.
+        // 登录器版本
         public double version = 1.1;
         public bool isDefaultConfigUsed { get; private set; }
         XmlDocument xml = new XmlDocument();
@@ -34,8 +34,8 @@ namespace AmarothLauncher.Core
             }
         }
         /// <summary>
-        /// Generates object XML structure of LauncherConfig.xml.
-        /// If reading of XML failes, default settings are used.
+        /// 生成LauncherConfig.XML的对象XML结构。
+        /// 如果读取XML失败，则使用默认设置。
         /// </summary>
         private void Initialize()
         {
@@ -53,21 +53,21 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Use default config XML as current config XML.
+        /// 使用默认配置XML作为当前配置XML。
         /// </summary>
         private void UseDefault()
         {
             xml = defaultXml;
             o.Messagebox(SubElText("Messages", "XmlNotOpened"));
 
-            // Save default config as a new config XML. Use for generating XML to be able to edit it afterwards, do NOT have this uncommented in releases!
+            // 将默认配置另存为新的配置XML。用于生成XML以便以后可以编辑它，不要在发行版中取消注释！
             // SaveDefault();
 
             isDefaultConfigUsed = true;
         }
 
         /// <summary>
-        /// Outputs whole config content. For debugging only.
+        ///输出整个配置内容。仅用于调试。
         /// </summary>
         public void OutputContent()
         {
@@ -81,7 +81,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Returns an inner text of given subelement of given element. If anything isn't found, error message is shown and an empty string returned.
+        /// 返回给定元素的给定子元素的内部文本。如果找不到任何内容，将显示错误消息并返回空字符串。
         /// </summary>
         public string SubElText(string elementName, string subElementName)
         {
@@ -99,7 +99,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Return an inner text of given element in config XML. If not found, return empty string and output error.
+        ///返回配置XML中给定元素的内部文本。如果找不到，则返回空字符串并输出错误。
         /// </summary>
         public string InnText(string elementName)
         {
@@ -114,7 +114,7 @@ namespace AmarothLauncher.Core
 
         #region Default config generation...
         /// <summary>
-        /// Generate a new default config. Will be used only if no config is found.
+        /// 生成新的默认配置。仅当找不到配置时才使用。
         /// </summary>
         private void GenerateDefault()
         {
@@ -136,7 +136,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Adds a new subnode under a node, with given name and inner text.
+        /// 在节点下添加具有给定名称和内部文本的新子节点。
         /// </summary>
         private void AddSubnodeDefault(XmlNode node, string name, string value)
         {
@@ -144,7 +144,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Adds a new subnode under a node, with given name and inner text. Also creates a given comment, if it isn't empty.
+        /// 在节点下添加具有给定名称和内部文本的新子节点。如果不是空的，也创建一个给定的注释。
         /// </summary>
         private void AddSubnodeDefault(XmlNode node, string name, string value, string comment)
         {
@@ -159,7 +159,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Default configuration of paths to web.
+        /// web路径的默认配置。
         /// </summary>
         private void MainSettingsDefault()
         {
@@ -177,69 +177,67 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Default configuration of paths to web.
+        /// web路径的默认配置。
         /// </summary>
         private void PathConfigDefault()
         {
             XmlComment comment = defaultXml.CreateComment("Paths to files and folders Launcher will work with. They are commonly all !CASE SENSITIVE!");
             XmlNode node = defaultXml.CreateElement("Paths");
 
-            AddSubnodeDefault(node, "FilelistPath", "http://www.example.com/files/filelist.conf", "Path to text filelist.");
-            AddSubnodeDefault(node, "VersionPath", "http://www.example.com/files/launcherversion.conf", "Path to text file which contains your Lancher's current version (version is a double value with . as separator!");
-            AddSubnodeDefault(node, "LauncherPath", "http://www.exeample.com/files/Launcher.zip", "Path to a zip file with Launcher files - used if Launcher finds itself outdated.");
-            AddSubnodeDefault(node, "FilesRootPath", "http://www.example.com/files/", "Path to folder with files. Paths in filelist are relative to this path.");
-            AddSubnodeDefault(node, "ChangelogPath", "http://www.example.com/files/changelog.xml", "!HTTP! path to changelog XML file.");
-            AddSubnodeDefault(node, "ChangelogFTPPath", "ftp://ftp.example.com//www/files/", "!Full! !FTP! path to folder in which changelog is. Notice that //www/ part. You may want to use an IP instead of a domain name.");
-            AddSubnodeDefault(node, "Webpage", "http://www.example.com", "URL which is to be opened when user clicks on Project webpage button.");
-            AddSubnodeDefault(node, "Registration", "http://reg.example.com", "URL which is to be opened when user clicks on Registration button.");
-            AddSubnodeDefault(node, "Instructions", "http://www.example.com/launchermanual/", "URL which is to be opened when user clicks on Launcher manual button.");
-            AddSubnodeDefault(node, "HelloImage", "http://www.example.com/files/hello.jpg", "URL to image which is to be displayed in Main window (latest news image). Clicking on it opens a changelog browser.");
+            AddSubnodeDefault(node, "FilelistPath", "http://www.xxx.com/LauncherWebFolder/filelist.conf", "Path to text filelist.");
+            AddSubnodeDefault(node, "VersionPath", "http://www.xxx.com//LauncherWebFolder/launcherversion.conf", "Path to text file which contains your Lancher's current version (version is a double value with . as separator!");
+            AddSubnodeDefault(node, "LauncherPath", "http://www.xxx.com/LauncherWebFolder/Launcher.zip", "Path to a zip file with Launcher files - used if Launcher finds itself outdated.");
+            AddSubnodeDefault(node, "FilesRootPath", "/http://www.xxx.com/LauncherWebFolder/", "Path to folder with files. Paths in filelist are relative to this path.");
+            AddSubnodeDefault(node, "ChangelogPath", "http://www.xxx.com/LauncherWebFolder/changelog.xml", "!HTTP! path to changelog XML file.");
+            AddSubnodeDefault(node, "ChangelogFTPPath", "ftp://ftp.www.xxx.com/", "!Full! !FTP! path to folder in which changelog is. Notice that //www/ part. You may want to use an IP instead of a domain name.");
+            AddSubnodeDefault(node, "Webpage", "http://www.xxx.com/", "URL which is to be opened when user clicks on Project webpage button.");
+            AddSubnodeDefault(node, "Registration", "http://www.xxx.com/", "URL which is to be opened when user clicks on Registration button.");
+            AddSubnodeDefault(node, "Instructions", "http://www.xxx.com/", "URL which is to be opened when user clicks on Launcher manual button.");
+            AddSubnodeDefault(node, "HelloImage", "http://www.xxx.com/LauncherWebFolder/hello.jpg", "URL to image which is to be displayed in Main window (latest news image). Clicking on it opens a changelog browser.");
 
             defaultXml.DocumentElement.AppendChild(comment);
             defaultXml.DocumentElement.AppendChild(node);
         }
 
         /// <summary>
-        /// Default configuration of main window.
+        /// 主窗口的默认配置。
         /// </summary>
         private void MainWindowDefault()
         {
             XmlComment comment = defaultXml.CreateComment("Visual settings for Main Window.");
             XmlNode node = defaultXml.CreateElement("MainWindow");
 
-            AddSubnodeDefault(node, "WindowName", "Amaroth's Launcher " + version.ToString("F", CultureInfo.InvariantCulture), "Name of main window. Change this to match your project's name.");
-            AddSubnodeDefault(node, "OutputBox", "Text output:");
-            AddSubnodeDefault(node, "OptionalBox", "Optional files:");
-            AddSubnodeDefault(node, "CheckForUpdatesButton", "Check for updates");
-            AddSubnodeDefault(node, "UpdateButton", "Update");
-            AddSubnodeDefault(node, "WebpageButton", "Project webpage");
-            AddSubnodeDefault(node, "RegistrationButton", "Registration");
-            AddSubnodeDefault(node, "LauncherInstructionsButton", "Launcher manual");
-            AddSubnodeDefault(node, "DeleteBackupsButton", "Delete .ext_ backups");
-            AddSubnodeDefault(node, "ChangelogEditorButton", "Changelog editor");
-            AddSubnodeDefault(node, "ChangelogBrowserButton", "Changelog browser");
-            AddSubnodeDefault(node, "LaunchButton", "Launch");
-            AddSubnodeDefault(node, "ProgressText", "Downloading: ");
+            AddSubnodeDefault(node, "WindowName", "MoonSun登录器 " + version.ToString("F", CultureInfo.InvariantCulture), "MoonSun登录器");
+            AddSubnodeDefault(node, "OutputBox", "温馨提示:");
+            AddSubnodeDefault(node, "OptionalBox", "可选文件:");
+            AddSubnodeDefault(node, "CheckForUpdatesButton", "检查更新");
+            AddSubnodeDefault(node, "UpdateButton", "更新");
+            AddSubnodeDefault(node, "WebpageButton", "主页");
+            AddSubnodeDefault(node, "RegistrationButton", "账号注册");
+            AddSubnodeDefault(node, "ChangelogEditorButton", "日志编辑器");
+            AddSubnodeDefault(node, "ChangelogBrowserButton", "日志浏览");
+            AddSubnodeDefault(node, "LaunchButton", "进入游戏");
+            AddSubnodeDefault(node, "ProgressText", "正在下载: ");
             AddSubnodeDefault(node, "ProgressSeparator", " / ");
             AddSubnodeDefault(node, "DownloadSpeedUnits", "/s, ");
-            AddSubnodeDefault(node, "remaining", "remaining");
-            AddSubnodeDefault(node, "downloaded", "downloaded, ");
-            AddSubnodeDefault(node, "ToolTipTotalSize", "Total size: ");
-            AddSubnodeDefault(node, "PanelTotalSize", "Total size of outdated:");
-            AddSubnodeDefault(node, "LabelTotalSizeOpt", "Chosen optionals: ");
-            AddSubnodeDefault(node, "LabelTotalSizeNonOpt", "Non-optionals: ");
+            AddSubnodeDefault(node, "remaining", "剩余");
+            AddSubnodeDefault(node, "downloaded", "已下载, ");
+            AddSubnodeDefault(node, "ToolTipTotalSize", "总大小: ");
+            AddSubnodeDefault(node, "PanelTotalSize", "需更新文件大小:");
+            AddSubnodeDefault(node, "LabelTotalSizeOpt", "已选择: ");
+            AddSubnodeDefault(node, "LabelTotalSizeNonOpt", "未选择: ");
             AddSubnodeDefault(node, "second", " s ");
             AddSubnodeDefault(node, "minute", " m ");
             AddSubnodeDefault(node, "hour", " h ");
-            AddSubnodeDefault(node, "Complete", "Download complete!");
-            AddSubnodeDefault(node, "Errors", "Errors occured!");
+            AddSubnodeDefault(node, "Complete", "下载完毕!");
+            AddSubnodeDefault(node, "Errors", "发生错误!");
 
             defaultXml.DocumentElement.AppendChild(comment);
             defaultXml.DocumentElement.AppendChild(node);
         }
 
         /// <summary>
-        /// Default configuration of changelog editor.
+        /// 更改日志编辑器的默认配置。
         /// </summary>
         private void ChangelogEditorDefault()
         {
@@ -269,7 +267,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Default configuration of changelog browser. A lot of settings are being used from changelog editor.
+        /// 更改日志浏览器的默认配置。许多设置都是从changelog编辑器中使用的。
         /// </summary>
         private void ChangelogBrowserDefault()
         {
@@ -285,7 +283,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Default configuration of FTP login window.
+        /// FTP登录窗口的默认配置。
         /// </summary>
         private void FTPLoginWindowDefault()
         {
@@ -303,52 +301,52 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Error (and other) messages. Leave space behind message if you want to ouput something directly behind it (like file's name).
+        /// 错误（和其他）消息。如果要在消息后面直接输出某些内容（如文件名），请在消息后面留出空间。
         /// </summary>
         private void MessagesDefault()
         {
             XmlComment comment = defaultXml.CreateComment("Various messages which can be output by Launcher.");
             XmlNode node = defaultXml.CreateElement("Messages");
 
-            AddSubnodeDefault(node, "HelloMessage", "This Launcher was coded by Amaroth from www.model-changing.net.", "Please, leave this here. If you want to add anything, add it behind original message.");
-            AddSubnodeDefault(node, "XmlNotOpened", "Default settings are being used, because LauncherConfig.xml could not be loaded. Launcher can't continue. Get a new config file!");
-            AddSubnodeDefault(node, "ChangelogNotOpened", "Failed to open a changelog file on web.");
-            AddSubnodeDefault(node, "ChangelogNotLoaded", "Failed to load changelog data. Please, contact support.");
-            AddSubnodeDefault(node, "ChangelogEmpty", "Warning: changelog is empty. You are currently creating a new one.");
-            AddSubnodeDefault(node, "InvalidFtpPassword", "Incorrect login - password combination, or incorrect FTP path to changelog.");
-            AddSubnodeDefault(node, "PictureNotOpened", "Picture from given URL could not be opened. URL seems to be invalid.");
-            AddSubnodeDefault(node, "ChangelogNotUploaded", "Changelog could not be uploaded. Backup XML file can be found in Launcher's directory.");
-            AddSubnodeDefault(node, "ChangelogUploadOK", "Changelog was succesfully updated.");
-            AddSubnodeDefault(node, "UnZipingFileError", "Failed to unzip file: ");
-            AddSubnodeDefault(node, "DownloadingFrom", "Downloading file from: ");
+            AddSubnodeDefault(node, "HelloMessage", "登录器程序由MoonSun编写。如果您想添加任何内容，请联系GM。");
+            AddSubnodeDefault(node, "XmlNotOpened", "正在使用默认设置，因为无法加载LauncherConfig.xml，登录器不能继续运行，请添加新的配置文件!\n");
+            AddSubnodeDefault(node, "ChangelogNotOpened", "打开更改日志文件失败。");
+            AddSubnodeDefault(node, "ChangelogNotLoaded", "加载更改日志数据失败。请联系GM。");
+            AddSubnodeDefault(node, "ChangelogEmpty", "警告：更改日志为空。您当前正在创建一个新的。");
+            AddSubnodeDefault(node, "InvalidFtpPassword", "不正确的登录密码组合，或不正确的FTP路径改变记录。");
+            AddSubnodeDefault(node, "PictureNotOpened", "无法打开给定URL中的图片。URL似乎无效。");
+            AddSubnodeDefault(node, "ChangelogNotUploaded", "无法上载更改日志。备份XML文件可以在启动程序的目录中找到。");
+            AddSubnodeDefault(node, "ChangelogUploadOK", "已成功更新更改日志。");
+            AddSubnodeDefault(node, "UnZipingFileError", "无法解压缩文件： ");
+            AddSubnodeDefault(node, "DownloadingFrom", "正在从以下位置下载文件： ");
             AddSubnodeDefault(node, "DownloadingTo", "To: ");
-            AddSubnodeDefault(node, "UnzipingFile", "Unziping file: ");
-            AddSubnodeDefault(node, "FileDeletingError", "Failed to delete file: ");
-            AddSubnodeDefault(node, "WowExeMissing", "WoW.exe was not found!");
-            AddSubnodeDefault(node, "DataDirMissing", "Data directory was not found!");
-            AddSubnodeDefault(node, "BlizzlikeMpqMissing", "Failed to find essential file: ");
-            AddSubnodeDefault(node, "LauncherNotInWowDir", "Your WoW client is either damaged, or Launcher is not in WoW root directory.");
-            AddSubnodeDefault(node, "FilelistOpeningFailed", "Launcher could not open filelist on web. Check your internet connection, or contact your support team. Error message: ");
-            AddSubnodeDefault(node, "FilelistReadingFailed", "Filelist on web is invalid. Contact your support team.");
-            AddSubnodeDefault(node, "FileOnsWebMissing", "File's size could not be found. File is probably missing on web server. ");
-            AddSubnodeDefault(node, "WebRealmlistMissing", "File realmlist.wtf could not be found on web. Realmlist could not be verified.");
-            AddSubnodeDefault(node, "RealmlistMissing", "It appears local realmlist.wtf is missing. Create a new one if it is so.");
-            AddSubnodeDefault(node, "OptionalsPresetLoadFailed", "You don't have saved optional groups selection, or list of them has changed. Please, pay attention optional files checkbox list before you click on an Update button.");
-            AddSubnodeDefault(node, "DownloadError", "Error occured while followin file was being downloaded: ");
-            AddSubnodeDefault(node, "FileDownloadError", "Some files apparently weren't succesfully downloaded. Re-run Check for updates and Update.");
-            AddSubnodeDefault(node, "HelloImageNotLoaded", "News image could not be loaded.");
-            AddSubnodeDefault(node, "VersionNotVerified", "Launcher could not verify wheter it is up to date. It will proceed as normal, but notify your support team about this issue if it persists.");
-            AddSubnodeDefault(node, "CouldNotBeUpdated", "Launcher has attempted an update of itself, but it was not successful. Try to re-run a Launcher and contact your support team if issue persists.");
-            AddSubnodeDefault(node, "OutdatedLauncher", "There seems to be a new version of Launcher on web. Launcher will attempt an update and then restart.");
-            AddSubnodeDefault(node, "LauncherUpdated", "Launcher has been succesfully updated. Please, run Launcher again.");
-            AddSubnodeDefault(node, "Removing", "Removing file: ");
+            AddSubnodeDefault(node, "UnzipingFile", "解压文件： ");
+            AddSubnodeDefault(node, "FileDeletingError", "未能删除文件： ");
+            AddSubnodeDefault(node, "WowExeMissing", "找不到WoW.exe！");
+            AddSubnodeDefault(node, "DataDirMissing", "找不到数据目录！");
+            AddSubnodeDefault(node, "BlizzlikeMpqMissing", "找不到基本文件： ");
+            AddSubnodeDefault(node, "LauncherNotInWowDir", "您客户端中的WoW.exe已损坏，或不在客户端目录中。");
+            AddSubnodeDefault(node, "FilelistOpeningFailed", "登录器无法打开服务器的文件列表。请检查您的internet连接，或与GM联系。错误消息： ");
+            AddSubnodeDefault(node, "FilelistReadingFailed", "服务器的文件列表无效。联系GM。");
+            AddSubnodeDefault(node, "FileOnsWebMissing", "找不到文件容量。服务器上可能缺少文件。 ");
+            AddSubnodeDefault(node, "WebRealmlistMissing", "在web上找不到文件realmlist.wtf。无法验证Realmlist。");
+            AddSubnodeDefault(node, "RealmlistMissing", "似乎缺少客户端中的realmlist.wtf。如果是的话，创建一个新的。");
+            AddSubnodeDefault(node, "OptionalsPresetLoadFailed", "您没有保存可选的组选择，或者组列表已更改。请注意“可选文件”复选框列表，然后单击“更新”按钮。");
+            AddSubnodeDefault(node, "DownloadError", "下载下列文件时出错： ");
+            AddSubnodeDefault(node, "FileDownloadError", "有些文件显然没有成功下载。重新运行更新和更新检查。");
+            AddSubnodeDefault(node, "HelloImageNotLoaded", "无法加载新闻图像。");
+            AddSubnodeDefault(node, "VersionNotVerified", "登录器无法验证版本是否为最新，但仍将正常运行，如果存在问题，请联系GM。");
+            AddSubnodeDefault(node, "CouldNotBeUpdated", "登录器已尝试更新，但未成功。尝试重新运行登录器，如果问题仍然存在，请与GM联系。");
+            AddSubnodeDefault(node, "OutdatedLauncher", "服务器有新版本程序，将尝试更新，然后重新启动。");
+            AddSubnodeDefault(node, "LauncherUpdated", "登录器已成功更新，请再次运行。");
+            AddSubnodeDefault(node, "Removing", "正在删除文件： ");
 
             defaultXml.DocumentElement.AppendChild(comment);
             defaultXml.DocumentElement.AppendChild(node);
         }
 
         /// <summary>
-        /// Save default XML as new LauncherConfig.xml, overwrite an old one.
+        /// 将默认XML另存为new LauncherConfig.XML，覆盖旧的。
         /// </summary>
         private void SaveDefault()
         {

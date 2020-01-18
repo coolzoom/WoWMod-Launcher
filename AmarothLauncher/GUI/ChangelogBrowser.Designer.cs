@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "12.10.2016 10:45",
             "Test"}, -1);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangelogBrowser));
             this.panelMain = new System.Windows.Forms.SplitContainer();
             this.panelList = new System.Windows.Forms.GroupBox();
             this.listBox = new System.Windows.Forms.ListView();
@@ -80,7 +81,7 @@
             // panelMain.Panel2
             // 
             this.panelMain.Panel2.Controls.Add(this.panelRight);
-            this.panelMain.Size = new System.Drawing.Size(884, 562);
+            this.panelMain.Size = new System.Drawing.Size(884, 519);
             this.panelMain.SplitterDistance = 294;
             this.panelMain.TabIndex = 12;
             // 
@@ -90,10 +91,10 @@
             this.panelList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelList.Location = new System.Drawing.Point(0, 0);
             this.panelList.Name = "panelList";
-            this.panelList.Size = new System.Drawing.Size(290, 558);
+            this.panelList.Size = new System.Drawing.Size(290, 515);
             this.panelList.TabIndex = 4;
             this.panelList.TabStop = false;
-            this.panelList.Text = "Changelog entries:";
+            this.panelList.Text = "日志列表:";
             // 
             // listBox
             // 
@@ -102,13 +103,14 @@
             this.heading});
             this.listBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBox.FullRowSelect = true;
+            this.listBox.HideSelection = false;
             this.listBox.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.listBox.Location = new System.Drawing.Point(3, 16);
+            listViewItem3});
+            this.listBox.Location = new System.Drawing.Point(3, 17);
             this.listBox.MultiSelect = false;
             this.listBox.Name = "listBox";
             this.listBox.ShowItemToolTips = true;
-            this.listBox.Size = new System.Drawing.Size(284, 539);
+            this.listBox.Size = new System.Drawing.Size(284, 495);
             this.listBox.TabIndex = 0;
             this.listBox.UseCompatibleStateImageBehavior = false;
             this.listBox.View = System.Windows.Forms.View.Details;
@@ -117,12 +119,12 @@
             // 
             // date
             // 
-            this.date.Text = "Date";
+            this.date.Text = "日期";
             this.date.Width = 104;
             // 
             // heading
             // 
-            this.heading.Text = "Heading";
+            this.heading.Text = "标题";
             this.heading.Width = 159;
             // 
             // panelRight
@@ -140,8 +142,8 @@
             // panelRight.Panel2
             // 
             this.panelRight.Panel2.Controls.Add(this.panelBottomRight);
-            this.panelRight.Size = new System.Drawing.Size(586, 562);
-            this.panelRight.SplitterDistance = 309;
+            this.panelRight.Size = new System.Drawing.Size(586, 519);
+            this.panelRight.SplitterDistance = 285;
             this.panelRight.TabIndex = 0;
             // 
             // panelTopRight
@@ -156,9 +158,9 @@
             this.panelTopRight.Location = new System.Drawing.Point(0, 0);
             this.panelTopRight.Name = "panelTopRight";
             this.panelTopRight.RowCount = 2;
-            this.panelTopRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.panelTopRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.panelTopRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelTopRight.Size = new System.Drawing.Size(582, 305);
+            this.panelTopRight.Size = new System.Drawing.Size(582, 281);
             this.panelTopRight.TabIndex = 0;
             // 
             // panelDescription
@@ -166,21 +168,21 @@
             this.panelTopRight.SetColumnSpan(this.panelDescription, 2);
             this.panelDescription.Controls.Add(this.descriptionBox);
             this.panelDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDescription.Location = new System.Drawing.Point(3, 53);
+            this.panelDescription.Location = new System.Drawing.Point(3, 49);
             this.panelDescription.Name = "panelDescription";
-            this.panelDescription.Size = new System.Drawing.Size(576, 249);
+            this.panelDescription.Size = new System.Drawing.Size(576, 229);
             this.panelDescription.TabIndex = 4;
             this.panelDescription.TabStop = false;
-            this.panelDescription.Text = "Description:";
+            this.panelDescription.Text = "内容:";
             // 
             // descriptionBox
             // 
             this.descriptionBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.descriptionBox.Location = new System.Drawing.Point(3, 16);
+            this.descriptionBox.Location = new System.Drawing.Point(3, 17);
             this.descriptionBox.Name = "descriptionBox";
-            this.descriptionBox.Size = new System.Drawing.Size(570, 230);
+            this.descriptionBox.Size = new System.Drawing.Size(570, 209);
             this.descriptionBox.TabIndex = 2;
-            this.descriptionBox.Text = "Click on an entry in entries list in order to display it.";
+            this.descriptionBox.Text = "单击日志列表中的标题以显示该日志。";
             this.descriptionBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.descriptionBox_LinkClicked);
             // 
             // panelDate
@@ -189,19 +191,19 @@
             this.panelDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDate.Location = new System.Drawing.Point(294, 3);
             this.panelDate.Name = "panelDate";
-            this.panelDate.Size = new System.Drawing.Size(285, 44);
+            this.panelDate.Size = new System.Drawing.Size(285, 40);
             this.panelDate.TabIndex = 1;
             this.panelDate.TabStop = false;
-            this.panelDate.Text = "Date:";
+            this.panelDate.Text = "日期:";
             // 
             // dateBox
             // 
             this.dateBox.CustomFormat = "dd.MM.yyyy hh:mm";
             this.dateBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateBox.Location = new System.Drawing.Point(3, 16);
+            this.dateBox.Location = new System.Drawing.Point(3, 17);
             this.dateBox.Name = "dateBox";
-            this.dateBox.Size = new System.Drawing.Size(279, 20);
+            this.dateBox.Size = new System.Drawing.Size(279, 21);
             this.dateBox.TabIndex = 0;
             // 
             // panelHeading
@@ -210,17 +212,17 @@
             this.panelHeading.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHeading.Location = new System.Drawing.Point(3, 3);
             this.panelHeading.Name = "panelHeading";
-            this.panelHeading.Size = new System.Drawing.Size(285, 44);
+            this.panelHeading.Size = new System.Drawing.Size(285, 40);
             this.panelHeading.TabIndex = 6;
             this.panelHeading.TabStop = false;
-            this.panelHeading.Text = "Heading:";
+            this.panelHeading.Text = "标题:";
             // 
             // headingBox
             // 
             this.headingBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.headingBox.Location = new System.Drawing.Point(3, 16);
+            this.headingBox.Location = new System.Drawing.Point(3, 17);
             this.headingBox.Name = "headingBox";
-            this.headingBox.Size = new System.Drawing.Size(279, 20);
+            this.headingBox.Size = new System.Drawing.Size(279, 21);
             this.headingBox.TabIndex = 0;
             // 
             // panelBottomRight
@@ -230,7 +232,7 @@
             this.panelBottomRight.Location = new System.Drawing.Point(0, 0);
             this.panelBottomRight.Name = "panelBottomRight";
             this.panelBottomRight.Padding = new System.Windows.Forms.Padding(3);
-            this.panelBottomRight.Size = new System.Drawing.Size(582, 245);
+            this.panelBottomRight.Size = new System.Drawing.Size(582, 226);
             this.panelBottomRight.TabIndex = 9;
             // 
             // panelPicture
@@ -239,19 +241,19 @@
             this.panelPicture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPicture.Location = new System.Drawing.Point(3, 3);
             this.panelPicture.Name = "panelPicture";
-            this.panelPicture.Size = new System.Drawing.Size(576, 239);
+            this.panelPicture.Size = new System.Drawing.Size(576, 220);
             this.panelPicture.TabIndex = 8;
             this.panelPicture.TabStop = false;
-            this.panelPicture.Text = "Picture:";
+            this.panelPicture.Text = "图片:";
             // 
             // pictureBox
             // 
             this.pictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox.InitialImage = null;
-            this.pictureBox.Location = new System.Drawing.Point(3, 16);
+            this.pictureBox.Location = new System.Drawing.Point(3, 17);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(570, 220);
+            this.pictureBox.Size = new System.Drawing.Size(570, 200);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 7;
             this.pictureBox.TabStop = false;
@@ -259,13 +261,14 @@
             // 
             // ChangelogBrowser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 562);
+            this.ClientSize = new System.Drawing.Size(884, 519);
             this.Controls.Add(this.panelMain);
-            this.MinimumSize = new System.Drawing.Size(900, 600);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(900, 557);
             this.Name = "ChangelogBrowser";
-            this.Text = "Changelog Browser";
+            this.Text = "日志浏览";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChangelogBrowser_FormClosing);
             this.Load += new System.EventHandler(this.ChangelogBrowser_Load);
             this.panelMain.Panel1.ResumeLayout(false);

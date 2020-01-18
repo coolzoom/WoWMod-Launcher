@@ -3,12 +3,12 @@
     partial class MainWindow
     {
         /// <summary>
-        /// Required designer variable.
+        /// 必需的设计器变量。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// 清理所有正在使用的资源。
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,13 +23,13 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// 设计器支持所需的方法-不要使用代码编辑器修改此方法的内容。
         /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Test");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.panelMain = new System.Windows.Forms.SplitContainer();
             this.panelLeftMain = new System.Windows.Forms.TableLayoutPanel();
             this.panelBottomLeft = new System.Windows.Forms.TableLayoutPanel();
@@ -45,18 +45,17 @@
             this.panelOutput = new System.Windows.Forms.GroupBox();
             this.output = new System.Windows.Forms.RichTextBox();
             this.panelRight = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.changelogEditButt = new System.Windows.Forms.Button();
-            this.delBackButt = new System.Windows.Forms.Button();
-            this.launcherInfoButt = new System.Windows.Forms.Button();
             this.regButt = new System.Windows.Forms.Button();
             this.panelOptional = new System.Windows.Forms.GroupBox();
             this.optionalsListView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.webButt = new System.Windows.Forms.Button();
             this.launchButt = new System.Windows.Forms.Button();
             this.changelogBrowserButt = new System.Windows.Forms.Button();
             this.panelTotalSize = new System.Windows.Forms.GroupBox();
             this.totalSizeLabel = new System.Windows.Forms.Label();
+            this.webButt = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelMain)).BeginInit();
             this.panelMain.Panel1.SuspendLayout();
@@ -78,25 +77,32 @@
             // 
             // panelMain
             // 
+            this.panelMain.BackColor = System.Drawing.Color.Transparent;
             this.panelMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             // 
             // panelMain.Panel1
             // 
             this.panelMain.Panel1.Controls.Add(this.panelLeftMain);
+            this.panelMain.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Panel1_Paint);
             // 
             // panelMain.Panel2
             // 
+            this.panelMain.Panel2.BackColor = System.Drawing.Color.White;
             this.panelMain.Panel2.Controls.Add(this.panelRight);
-            this.panelMain.Size = new System.Drawing.Size(884, 562);
-            this.panelMain.SplitterDistance = 659;
+            this.panelMain.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Panel2_Paint);
+            this.panelMain.Size = new System.Drawing.Size(884, 519);
+            this.panelMain.SplitterDistance = 663;
+            this.panelMain.SplitterWidth = 1;
             this.panelMain.TabIndex = 11;
             this.panelMain.TabStop = false;
+            this.panelMain.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.panelMain_SplitterMoved);
             // 
             // panelLeftMain
             // 
+            this.panelLeftMain.BackColor = System.Drawing.Color.White;
             this.panelLeftMain.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.panelLeftMain.ColumnCount = 1;
             this.panelLeftMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -108,13 +114,16 @@
             this.panelLeftMain.Name = "panelLeftMain";
             this.panelLeftMain.RowCount = 3;
             this.panelLeftMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelLeftMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.panelLeftMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
-            this.panelLeftMain.Size = new System.Drawing.Size(655, 558);
+            this.panelLeftMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.panelLeftMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.panelLeftMain.Size = new System.Drawing.Size(659, 515);
             this.panelLeftMain.TabIndex = 0;
+            this.panelLeftMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeftMain_Paint);
             // 
             // panelBottomLeft
             // 
+            this.panelBottomLeft.BackColor = System.Drawing.Color.Transparent;
+            this.panelBottomLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelBottomLeft.ColumnCount = 3;
             this.panelBottomLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.panelBottomLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
@@ -123,11 +132,11 @@
             this.panelBottomLeft.Controls.Add(this.updateButt, 2, 0);
             this.panelBottomLeft.Controls.Add(this.checkUpdatesButt, 0, 0);
             this.panelBottomLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBottomLeft.Location = new System.Drawing.Point(4, 504);
+            this.panelBottomLeft.Location = new System.Drawing.Point(4, 465);
             this.panelBottomLeft.Name = "panelBottomLeft";
             this.panelBottomLeft.RowCount = 1;
             this.panelBottomLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelBottomLeft.Size = new System.Drawing.Size(647, 50);
+            this.panelBottomLeft.Size = new System.Drawing.Size(651, 46);
             this.panelBottomLeft.TabIndex = 3;
             // 
             // panelProgress
@@ -138,22 +147,22 @@
             this.panelProgress.Controls.Add(this.speedLabel, 0, 1);
             this.panelProgress.Controls.Add(this.progressLabel, 0, 0);
             this.panelProgress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelProgress.Location = new System.Drawing.Point(197, 3);
+            this.panelProgress.Location = new System.Drawing.Point(198, 3);
             this.panelProgress.Name = "panelProgress";
             this.panelProgress.RowCount = 3;
             this.panelProgress.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
             this.panelProgress.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
             this.panelProgress.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.34F));
-            this.panelProgress.Size = new System.Drawing.Size(252, 44);
+            this.panelProgress.Size = new System.Drawing.Size(254, 40);
             this.panelProgress.TabIndex = 1;
             // 
             // percentLabel
             // 
             this.percentLabel.AutoSize = true;
             this.percentLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.percentLabel.Location = new System.Drawing.Point(3, 28);
+            this.percentLabel.Location = new System.Drawing.Point(3, 26);
             this.percentLabel.Name = "percentLabel";
-            this.percentLabel.Size = new System.Drawing.Size(246, 16);
+            this.percentLabel.Size = new System.Drawing.Size(248, 14);
             this.percentLabel.TabIndex = 6;
             this.percentLabel.Text = "0% (0 MB downloaded, 0 MB remaining)";
             this.percentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -162,11 +171,11 @@
             // 
             this.speedLabel.AutoSize = true;
             this.speedLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.speedLabel.Location = new System.Drawing.Point(3, 14);
+            this.speedLabel.Location = new System.Drawing.Point(3, 13);
             this.speedLabel.Name = "speedLabel";
-            this.speedLabel.Size = new System.Drawing.Size(246, 14);
+            this.speedLabel.Size = new System.Drawing.Size(248, 13);
             this.speedLabel.TabIndex = 5;
-            this.speedLabel.Text = "0 KB/s, 0 s remaining";
+            this.speedLabel.Text = "0 KB/s,remaining 0 s ";
             this.speedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // progressLabel
@@ -174,7 +183,7 @@
             this.progressLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.progressLabel.Location = new System.Drawing.Point(3, 0);
             this.progressLabel.Name = "progressLabel";
-            this.progressLabel.Size = new System.Drawing.Size(246, 14);
+            this.progressLabel.Size = new System.Drawing.Size(248, 13);
             this.progressLabel.TabIndex = 3;
             this.progressLabel.Text = "Downloading: 0 / 0";
             this.progressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -182,32 +191,41 @@
             // updateButt
             // 
             this.updateButt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.updateButt.Location = new System.Drawing.Point(455, 3);
+            this.updateButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateButt.Font = new System.Drawing.Font("华文细黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.updateButt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.updateButt.Image = global::AmarothLauncher.Properties.Resources._123;
+            this.updateButt.Location = new System.Drawing.Point(458, 3);
             this.updateButt.Name = "updateButt";
-            this.updateButt.Size = new System.Drawing.Size(189, 44);
+            this.updateButt.Size = new System.Drawing.Size(190, 40);
             this.updateButt.TabIndex = 1;
-            this.updateButt.Text = "Update";
+            this.updateButt.Text = "更    新";
             this.updateButt.UseVisualStyleBackColor = true;
             this.updateButt.Click += new System.EventHandler(this.updateButt_Click);
             // 
             // checkUpdatesButt
             // 
             this.checkUpdatesButt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkUpdatesButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkUpdatesButt.Font = new System.Drawing.Font("华文细黑", 15F);
+            this.checkUpdatesButt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.checkUpdatesButt.Image = global::AmarothLauncher.Properties.Resources._123;
             this.checkUpdatesButt.Location = new System.Drawing.Point(3, 3);
             this.checkUpdatesButt.Name = "checkUpdatesButt";
-            this.checkUpdatesButt.Size = new System.Drawing.Size(188, 44);
+            this.checkUpdatesButt.Size = new System.Drawing.Size(189, 40);
             this.checkUpdatesButt.TabIndex = 0;
-            this.checkUpdatesButt.Text = "Check for updates";
+            this.checkUpdatesButt.Text = "检查更新";
             this.checkUpdatesButt.UseVisualStyleBackColor = true;
             this.checkUpdatesButt.Click += new System.EventHandler(this.checkUpdatesButt_Click);
             // 
             // progressBar
             // 
+            this.progressBar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.progressBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.progressBar.Location = new System.Drawing.Point(7, 467);
+            this.progressBar.Location = new System.Drawing.Point(7, 431);
             this.progressBar.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(641, 30);
+            this.progressBar.Size = new System.Drawing.Size(645, 27);
             this.progressBar.TabIndex = 2;
             // 
             // splitContainer1
@@ -225,8 +243,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panelOutput);
-            this.splitContainer1.Size = new System.Drawing.Size(647, 456);
-            this.splitContainer1.SplitterDistance = 363;
+            this.splitContainer1.Size = new System.Drawing.Size(651, 420);
+            this.splitContainer1.SplitterDistance = 306;
             this.splitContainer1.TabIndex = 12;
             this.splitContainer1.TabStop = false;
             // 
@@ -237,7 +255,7 @@
             this.newsPictureBox.InitialImage = null;
             this.newsPictureBox.Location = new System.Drawing.Point(0, 0);
             this.newsPictureBox.Name = "newsPictureBox";
-            this.newsPictureBox.Size = new System.Drawing.Size(643, 359);
+            this.newsPictureBox.Size = new System.Drawing.Size(647, 302);
             this.newsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.newsPictureBox.TabIndex = 0;
             this.newsPictureBox.TabStop = false;
@@ -245,128 +263,140 @@
             // 
             // panelOutput
             // 
+            this.panelOutput.BackColor = System.Drawing.Color.Transparent;
             this.panelOutput.Controls.Add(this.output);
             this.panelOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelOutput.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panelOutput.Location = new System.Drawing.Point(0, 0);
             this.panelOutput.Name = "panelOutput";
-            this.panelOutput.Size = new System.Drawing.Size(643, 85);
+            this.panelOutput.Size = new System.Drawing.Size(647, 106);
             this.panelOutput.TabIndex = 14;
             this.panelOutput.TabStop = false;
-            this.panelOutput.Text = "Text output:";
+            this.panelOutput.Text = "温馨提示:";
             // 
             // output
             // 
-            this.output.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.output.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.output.Location = new System.Drawing.Point(3, 16);
+            this.output.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.output.Location = new System.Drawing.Point(3, 17);
             this.output.Name = "output";
-            this.output.Size = new System.Drawing.Size(637, 66);
+            this.output.Size = new System.Drawing.Size(641, 86);
             this.output.TabIndex = 10;
             this.output.Text = "";
             this.output.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.output_LinkClicked);
             // 
             // panelRight
             // 
+            this.panelRight.BackColor = System.Drawing.Color.Transparent;
             this.panelRight.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.panelRight.ColumnCount = 1;
             this.panelRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.panelRight.Controls.Add(this.button1, 0, 8);
             this.panelRight.Controls.Add(this.changelogEditButt, 0, 6);
-            this.panelRight.Controls.Add(this.delBackButt, 0, 5);
-            this.panelRight.Controls.Add(this.launcherInfoButt, 0, 4);
             this.panelRight.Controls.Add(this.regButt, 0, 3);
             this.panelRight.Controls.Add(this.panelOptional, 0, 0);
-            this.panelRight.Controls.Add(this.webButt, 0, 2);
             this.panelRight.Controls.Add(this.launchButt, 0, 8);
             this.panelRight.Controls.Add(this.changelogBrowserButt, 0, 7);
             this.panelRight.Controls.Add(this.panelTotalSize, 0, 1);
+            this.panelRight.Controls.Add(this.webButt, 0, 2);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRight.Location = new System.Drawing.Point(0, 0);
             this.panelRight.Name = "panelRight";
             this.panelRight.RowCount = 9;
             this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.panelRight.Size = new System.Drawing.Size(217, 558);
+            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.panelRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
+            this.panelRight.Size = new System.Drawing.Size(216, 515);
             this.panelRight.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("锐字真言体免费商用", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Image = global::AmarothLauncher.Properties.Resources._123;
+            this.button1.Location = new System.Drawing.Point(4, 375);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(208, 59);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "退 出 游 戏";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // changelogEditButt
             // 
             this.changelogEditButt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.changelogEditButt.Location = new System.Drawing.Point(4, 408);
+            this.changelogEditButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.changelogEditButt.Font = new System.Drawing.Font("幼圆", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.changelogEditButt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.changelogEditButt.Image = global::AmarothLauncher.Properties.Resources._123;
+            this.changelogEditButt.Location = new System.Drawing.Point(4, 295);
             this.changelogEditButt.Name = "changelogEditButt";
-            this.changelogEditButt.Size = new System.Drawing.Size(209, 24);
+            this.changelogEditButt.Size = new System.Drawing.Size(208, 30);
             this.changelogEditButt.TabIndex = 8;
-            this.changelogEditButt.Text = "Changelog editor";
+            this.changelogEditButt.Text = "编辑日志";
             this.changelogEditButt.UseVisualStyleBackColor = true;
             this.changelogEditButt.Click += new System.EventHandler(this.changelogEditButt_Click);
-            // 
-            // delBackButt
-            // 
-            this.delBackButt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.delBackButt.Location = new System.Drawing.Point(4, 377);
-            this.delBackButt.Name = "delBackButt";
-            this.delBackButt.Size = new System.Drawing.Size(209, 24);
-            this.delBackButt.TabIndex = 7;
-            this.delBackButt.Text = "Delete .ext_ backups";
-            this.delBackButt.UseVisualStyleBackColor = true;
-            this.delBackButt.Click += new System.EventHandler(this.delBackButt_Click);
-            // 
-            // launcherInfoButt
-            // 
-            this.launcherInfoButt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.launcherInfoButt.Location = new System.Drawing.Point(4, 346);
-            this.launcherInfoButt.Name = "launcherInfoButt";
-            this.launcherInfoButt.Size = new System.Drawing.Size(209, 24);
-            this.launcherInfoButt.TabIndex = 6;
-            this.launcherInfoButt.Text = "Launcher manual";
-            this.launcherInfoButt.UseVisualStyleBackColor = true;
-            this.launcherInfoButt.Click += new System.EventHandler(this.launcherInfoButt_Click);
             // 
             // regButt
             // 
             this.regButt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.regButt.Location = new System.Drawing.Point(4, 315);
+            this.regButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.regButt.Font = new System.Drawing.Font("幼圆", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.regButt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.regButt.Image = global::AmarothLauncher.Properties.Resources._123;
+            this.regButt.Location = new System.Drawing.Point(4, 241);
             this.regButt.Name = "regButt";
-            this.regButt.Size = new System.Drawing.Size(209, 24);
+            this.regButt.Size = new System.Drawing.Size(208, 29);
             this.regButt.TabIndex = 5;
-            this.regButt.Text = "Registration";
+            this.regButt.Text = "注册账号";
             this.regButt.UseVisualStyleBackColor = true;
             this.regButt.Click += new System.EventHandler(this.regButt_Click);
             // 
             // panelOptional
             // 
+            this.panelOptional.BackColor = System.Drawing.Color.Transparent;
             this.panelOptional.Controls.Add(this.optionalsListView);
             this.panelOptional.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelOptional.ForeColor = System.Drawing.Color.Black;
             this.panelOptional.Location = new System.Drawing.Point(4, 4);
             this.panelOptional.Name = "panelOptional";
-            this.panelOptional.Size = new System.Drawing.Size(209, 212);
+            this.panelOptional.Size = new System.Drawing.Size(208, 131);
             this.panelOptional.TabIndex = 15;
             this.panelOptional.TabStop = false;
-            this.panelOptional.Text = "Optional files:";
+            this.panelOptional.Text = "可选文件:";
             // 
             // optionalsListView
             // 
+            this.optionalsListView.BackgroundImage = global::AmarothLauncher.Properties.Resources.tbg205a111;
+            this.optionalsListView.BackgroundImageTiled = true;
+            this.optionalsListView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.optionalsListView.CheckBoxes = true;
             this.optionalsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.optionalsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.optionalsListView.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionalsListView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.optionalsListView.FullRowSelect = true;
             this.optionalsListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.optionalsListView.HideSelection = false;
             listViewItem1.StateImageIndex = 0;
             listViewItem1.ToolTipText = "!!!";
             this.optionalsListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.optionalsListView.Location = new System.Drawing.Point(3, 16);
+            this.optionalsListView.Location = new System.Drawing.Point(3, 17);
             this.optionalsListView.MultiSelect = false;
             this.optionalsListView.Name = "optionalsListView";
             this.optionalsListView.ShowItemToolTips = true;
-            this.optionalsListView.Size = new System.Drawing.Size(203, 193);
+            this.optionalsListView.Size = new System.Drawing.Size(202, 111);
             this.optionalsListView.TabIndex = 10;
             this.optionalsListView.UseCompatibleStateImageBehavior = false;
             this.optionalsListView.View = System.Windows.Forms.View.List;
@@ -378,59 +408,75 @@
             this.columnHeader1.Text = "Name";
             this.columnHeader1.Width = 1000;
             // 
-            // webButt
-            // 
-            this.webButt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webButt.Location = new System.Drawing.Point(4, 284);
-            this.webButt.Name = "webButt";
-            this.webButt.Size = new System.Drawing.Size(209, 24);
-            this.webButt.TabIndex = 4;
-            this.webButt.Text = "Project webpage";
-            this.webButt.UseVisualStyleBackColor = true;
-            this.webButt.Click += new System.EventHandler(this.webButt_Click);
-            // 
             // launchButt
             // 
             this.launchButt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.launchButt.Location = new System.Drawing.Point(4, 490);
+            this.launchButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.launchButt.Font = new System.Drawing.Font("锐字真言体免费商用", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.launchButt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.launchButt.Image = global::AmarothLauncher.Properties.Resources._123;
+            this.launchButt.Location = new System.Drawing.Point(4, 441);
             this.launchButt.Name = "launchButt";
-            this.launchButt.Size = new System.Drawing.Size(209, 64);
+            this.launchButt.Size = new System.Drawing.Size(208, 70);
             this.launchButt.TabIndex = 3;
-            this.launchButt.Text = "Launch";
+            this.launchButt.Text = "进 入 游 戏";
             this.launchButt.UseVisualStyleBackColor = true;
             this.launchButt.Click += new System.EventHandler(this.launchButt_Click);
             // 
             // changelogBrowserButt
             // 
             this.changelogBrowserButt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.changelogBrowserButt.Location = new System.Drawing.Point(4, 439);
+            this.changelogBrowserButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.changelogBrowserButt.Font = new System.Drawing.Font("幼圆", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.changelogBrowserButt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.changelogBrowserButt.Image = global::AmarothLauncher.Properties.Resources._123;
+            this.changelogBrowserButt.Location = new System.Drawing.Point(4, 332);
             this.changelogBrowserButt.Name = "changelogBrowserButt";
-            this.changelogBrowserButt.Size = new System.Drawing.Size(209, 44);
+            this.changelogBrowserButt.Size = new System.Drawing.Size(208, 36);
             this.changelogBrowserButt.TabIndex = 9;
-            this.changelogBrowserButt.Text = "Changelog browser";
+            this.changelogBrowserButt.Text = "浏览日志";
             this.changelogBrowserButt.UseVisualStyleBackColor = true;
             this.changelogBrowserButt.Click += new System.EventHandler(this.changelogBrowserButt_Click);
             // 
             // panelTotalSize
             // 
+            this.panelTotalSize.BackColor = System.Drawing.Color.Transparent;
             this.panelTotalSize.Controls.Add(this.totalSizeLabel);
             this.panelTotalSize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTotalSize.Location = new System.Drawing.Point(4, 223);
+            this.panelTotalSize.ForeColor = System.Drawing.Color.Black;
+            this.panelTotalSize.Location = new System.Drawing.Point(4, 142);
             this.panelTotalSize.Name = "panelTotalSize";
-            this.panelTotalSize.Size = new System.Drawing.Size(209, 54);
+            this.panelTotalSize.Size = new System.Drawing.Size(208, 55);
             this.panelTotalSize.TabIndex = 13;
             this.panelTotalSize.TabStop = false;
-            this.panelTotalSize.Text = "Total size of outdated:";
+            this.panelTotalSize.Text = "需更新文件大小:";
             // 
             // totalSizeLabel
             // 
             this.totalSizeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.totalSizeLabel.Location = new System.Drawing.Point(3, 16);
+            this.totalSizeLabel.ForeColor = System.Drawing.Color.Black;
+            this.totalSizeLabel.Location = new System.Drawing.Point(3, 17);
             this.totalSizeLabel.Name = "totalSizeLabel";
-            this.totalSizeLabel.Size = new System.Drawing.Size(203, 35);
+            this.totalSizeLabel.Size = new System.Drawing.Size(202, 35);
             this.totalSizeLabel.TabIndex = 10;
-            this.totalSizeLabel.Text = "Chosen optionals: \r\nNon-optionals: ";
+            this.totalSizeLabel.Text = "已选择: \r\n未选择: ";
             this.totalSizeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // webButt
+            // 
+            this.webButt.BackColor = System.Drawing.Color.Transparent;
+            this.webButt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.webButt.Font = new System.Drawing.Font("幼圆", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.webButt.ForeColor = System.Drawing.Color.Transparent;
+            this.webButt.Image = global::AmarothLauncher.Properties.Resources._123;
+            this.webButt.Location = new System.Drawing.Point(4, 204);
+            this.webButt.Name = "webButt";
+            this.webButt.Size = new System.Drawing.Size(208, 30);
+            this.webButt.TabIndex = 4;
+            this.webButt.Text = "游戏主页";
+            this.webButt.UseVisualStyleBackColor = false;
+            this.webButt.Click += new System.EventHandler(this.webButt_Click);
             // 
             // timer
             // 
@@ -439,14 +485,17 @@
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 562);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(884, 516);
             this.Controls.Add(this.panelMain);
-            this.MinimumSize = new System.Drawing.Size(800, 450);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(800, 418);
             this.Name = "MainWindow";
-            this.Text = "Amaroth\'s Launcher";
+            this.Text = "MoonSun登录器";
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.DragLeave += new System.EventHandler(this.MainWindow_DragLeave);
             this.panelMain.Panel1.ResumeLayout(false);
             this.panelMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelMain)).EndInit();
@@ -484,9 +533,6 @@
         private System.Windows.Forms.Button checkUpdatesButt;
         private System.Windows.Forms.TableLayoutPanel panelRight;
         private System.Windows.Forms.Button changelogBrowserButt;
-        private System.Windows.Forms.Button delBackButt;
-        private System.Windows.Forms.Button launcherInfoButt;
-        private System.Windows.Forms.Button regButt;
         private System.Windows.Forms.GroupBox panelOptional;
         private System.Windows.Forms.Button webButt;
         private System.Windows.Forms.Button launchButt;
@@ -498,6 +544,8 @@
         private System.Windows.Forms.GroupBox panelTotalSize;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.PictureBox newsPictureBox;
+        private System.Windows.Forms.Button regButt;
+        private System.Windows.Forms.Button button1;
     }
 }
 

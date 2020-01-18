@@ -15,7 +15,7 @@ namespace AmarothLauncher.Core
         XmlDocument xml = new XmlDocument();
 
         /// <summary>
-        /// Creates new changelog instance and gets up to date version of changelog from web.
+        /// 创建新的变更日志实例，并从web获取变更日志的最新版本。
         /// </summary>
         public Changelog()
         {
@@ -24,7 +24,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Initialization. Tryes to open changelog from web and load it as XML.
+        /// 初始化。尝试从web打开变更日志并将其加载为XML。
         /// </summary>
         private void Initialize()
         {
@@ -49,7 +49,7 @@ namespace AmarothLauncher.Core
 
         #region Data getters...
         /// <summary>
-        /// Returns description text of given entry.
+        /// 返回给定项的说明文本。
         /// </summary>
         public string GetText(int id)
         {
@@ -57,7 +57,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Returns heading text of given entry.
+        /// 返回给定项的标题文本。
         /// </summary>
         public string GetHeading(int id)
         {
@@ -65,7 +65,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Returns picture URL of given entry.
+        /// 返回给定项的图片URL。
         /// </summary>
         public string GetPicture(int id)
         {
@@ -73,7 +73,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Returns date string of given entry.
+        /// 返回给定项的日期字符串。
         /// </summary>
         public string GetDate(int id)
         {
@@ -81,7 +81,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Returns amount of entries in changelog.
+        /// 返回变更日志中的条目数。
         /// </summary>
         public int GetAmount()
         {
@@ -94,7 +94,7 @@ namespace AmarothLauncher.Core
 
         #region Methods for modifying changelog...
         /// <summary>
-        /// Updates given element's description, picture URL, date string and heading.
+        /// 更新给定元素的描述、图片URL、日期字符串和标题。
         /// </summary>
         public void UpdateElement(int id, string description, string pictureURL, string date, string heading)
         {
@@ -105,7 +105,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Creates a new entry with given description, picture URL, date string and heading.
+        /// 创建具有给定说明、图片URL、日期字符串和标题的新条目。
         /// </summary>
         public void AddElement(string description, string pictureURL, string date, string heading)
         {
@@ -135,7 +135,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Removes given entry from changelog.
+        /// 从更改日志中删除给定项。
         /// </summary>
         public void RemoveElement(int id)
         {
@@ -146,7 +146,7 @@ namespace AmarothLauncher.Core
 
         #region Misc stuff...
         /// <summary>
-        /// Sorts changelog by date (descending).
+        /// 按日期对变更日志排序（降序）。
         /// </summary>
         public void SortXml(string dateFormat)
         {
@@ -168,7 +168,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Saves changelog as XML file.
+        /// 将变更日志另存为XML文件。
         /// </summary>
         public void SaveXml()
         {
@@ -184,7 +184,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Re-creates a blank new changelog.
+        /// 重新创建空白的新变更日志。
         /// </summary>
         private void NewXml()
         {
@@ -203,7 +203,7 @@ namespace AmarothLauncher.Core
     }
 
     /// <summary>
-    /// Container for easier management of changelog entries when they are being sorted.
+    ///容器，以便在对更改日志项进行排序时对其进行更轻松的管理。
     /// </summary>
     class ChangelogEntry
     {

@@ -27,7 +27,7 @@ namespace AmarothLauncher.GUI
 
         #region Methods...
         /// <summary>
-        /// Sets values of window elements to values set in config.
+        /// 将窗口元素的值设置为在配置中设置的值。
         /// </summary>
         private void LoadConfig()
         {
@@ -54,7 +54,7 @@ namespace AmarothLauncher.GUI
         }
 
         /// <summary>
-        /// Updates a list by getting current changelog version.
+        /// 通过获取当前更改日志版本来更新列表。
         /// </summary>
         private void UpdateListView()
         {
@@ -71,7 +71,7 @@ namespace AmarothLauncher.GUI
         }
 
         /// <summary>
-        /// Uploads saved changelog.xml to FTP.
+        /// 将保存的changelog.xml上载到FTP。
         /// </summary>
         private void UploadChangelog()
         {
@@ -111,7 +111,7 @@ namespace AmarothLauncher.GUI
 
         #region Event handlers...
         /// <summary>
-        /// Opens changelog entry and ensures that when its saved, it overwrites original entry.
+        /// 打开changelog条目并确保在保存时覆盖原始条目。
         /// </summary>
         private void editEntryButt_Click(object sender, EventArgs e)
         {
@@ -127,7 +127,7 @@ namespace AmarothLauncher.GUI
         }
 
         /// <summary>
-        /// Deletes changelog entry.
+        /// 删除changelog项。
         /// </summary>
         private void delEntryButt_Click(object sender, EventArgs e)
         {
@@ -141,7 +141,7 @@ namespace AmarothLauncher.GUI
         }
 
         /// <summary>
-        /// Resets all fields to default, and ensures that new entry will be saved as a new entry afterwards.
+        /// 将所有字段重置为默认值，并确保以后新条目将另存为新条目。
         /// </summary>
         private void addEntryButt_Click(object sender, EventArgs e)
         {
@@ -154,8 +154,8 @@ namespace AmarothLauncher.GUI
         }
 
         /// <summary>
-        /// Saves changelog entry into changelog. Overwrites an old one in case it was supposed to be edited.
-        /// If an old one was deleted previously, changelog entry is added as a new entry.
+        /// 将changelog条目保存到变更日志中。重写旧的，以防被编辑。
+        /// 如果以前删除了旧条目，则将changelog条目作为新条目添加。
         /// </summary>
         private void saveEntryButt_Click(object sender, EventArgs e)
         {
@@ -251,5 +251,10 @@ namespace AmarothLauncher.GUI
             UpdateListView();
         }
         #endregion
+
+        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

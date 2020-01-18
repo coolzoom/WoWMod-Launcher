@@ -26,3 +26,17 @@ D:\ProgramyC#\WoWModding\AmarothLauncher\AmarothsLauncherRelease\src\AmarothLaun
 D:\ProgramyC#\WoWModding\AmarothLauncher\AmarothsLauncherRelease\src\AmarothLauncher\obj\Release\AmarothLauncher.MainWindow.resources
 D:\ProgramyC#\WoWModding\AmarothLauncher\AmarothsLauncherRelease\src\AmarothLauncher\obj\Release\AmarothLauncher.Properties.Resources.resources
 D:\ProgramyC#\WoWModding\AmarothLauncher\AmarothsLauncherRelease\src\AmarothLauncher\obj\Release\AmarothLauncher.csproj.GenerateResource.Cache
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Release\AmarothLauncher.csprojAssemblyReference.cache
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Release\Interop.Shell32.dll
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Release\AmarothLauncher.csproj.ResolveComReference.cache
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Release\AmarothLauncher.GUI.ChangelogBrowser.resources
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Release\AmarothLauncher.GUI.ChangelogEditor.resources
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Release\AmarothLauncher.GUI.FTPLoginWindow.resources
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Release\AmarothLauncher.MainWindow.resources
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Release\AmarothLauncher.Properties.Resources.resources
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Release\AmarothLauncher.csproj.GenerateResource.cache
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Release\AmarothLauncher.exe
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Release\AmarothLauncher.pdb
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\bin\Release\AmarothLauncher.exe.config
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\bin\Release\AmarothLauncher.exe
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\bin\Release\AmarothLauncher.pdb

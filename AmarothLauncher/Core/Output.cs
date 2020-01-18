@@ -4,7 +4,7 @@ using System.Windows.Forms;
 namespace AmarothLauncher.Core
 {
     /// <summary>
-    /// OutputWriter is a singleton responsible for writing outputs to debug window in main window.
+    /// OutputWriter是一个单例，负责将输出写入主窗口中的调试窗口。
     /// </summary>
     class OutputWriter
     {
@@ -26,7 +26,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Empties output window and resets index.
+        /// 清空输出窗口并重置索引。
         /// </summary>
         public void Reset()
         {
@@ -38,7 +38,7 @@ namespace AmarothLauncher.Core
 
         #region Standart text outputs...
         /// <summary>
-        /// Writes a message into output window with message's ID.
+        /// 使用消息的ID将消息写入输出窗口。
         /// </summary>
         public void Output(string text)
         {
@@ -48,7 +48,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Writes a message into output window, followed by a line break and given exception's message.
+        /// 将消息写入输出窗口，后跟换行符和给定异常的消息。
         /// </summary>
         public void Output(string text, Exception e)
         {
@@ -57,7 +57,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Writes a message into output window with message's ID and optionally adds an indent in front of it.
+        /// 使用消息的ID将消息写入输出窗口，并可以选择在其前面添加缩进。
         /// </summary>
         public void Output(string text, bool indent)
         {
@@ -70,7 +70,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Writes TRUE or FALSE, depending on result of bool result. For debugging purpouses.
+        /// 根据bool result的结果，写入TRUE或FALSE。用于调试purpouses。
         /// </summary>
         public void Output(bool test)
         {
@@ -83,7 +83,7 @@ namespace AmarothLauncher.Core
 
         #region MessageBox outputs, should be used for critical messages.
         /// <summary>
-        /// Shows a message box with an error and also sends an error to output window. Used for critical errors.
+        /// 显示包含错误的消息框，并将错误发送到输出窗口。用于严重错误。
         /// </summary>
         public void Messagebox(string text)
         {
@@ -92,7 +92,7 @@ namespace AmarothLauncher.Core
         }
 
         /// <summary>
-        /// Shows a message box with and error and given exception's message separated by a line break. Used for critical errors.
+        /// 显示一个消息框，其中包含和error以及由换行符分隔的给定异常的消息。用于严重错误。
         /// </summary>
         public void Messagebox(string text, Exception e)
         {

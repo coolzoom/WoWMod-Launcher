@@ -26,3 +26,17 @@ D:\ProgramyC#\WoWModding\AmarothLauncher\AmarothsLauncherRelease\src\AmarothLaun
 D:\ProgramyC#\WoWModding\AmarothLauncher\AmarothsLauncherRelease\src\AmarothLauncher\obj\Debug\AmarothLauncher.MainWindow.resources
 D:\ProgramyC#\WoWModding\AmarothLauncher\AmarothsLauncherRelease\src\AmarothLauncher\obj\Debug\AmarothLauncher.Properties.Resources.resources
 D:\ProgramyC#\WoWModding\AmarothLauncher\AmarothsLauncherRelease\src\AmarothLauncher\obj\Debug\AmarothLauncher.csproj.GenerateResource.Cache
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\bin\Debug\AmarothLauncher.exe.config
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\bin\Debug\AmarothLauncher.exe
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\bin\Debug\AmarothLauncher.pdb
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Debug\AmarothLauncher.csprojAssemblyReference.cache
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Debug\Interop.Shell32.dll
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Debug\AmarothLauncher.csproj.ResolveComReference.cache
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Debug\AmarothLauncher.GUI.ChangelogBrowser.resources
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Debug\AmarothLauncher.GUI.ChangelogEditor.resources
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Debug\AmarothLauncher.GUI.FTPLoginWindow.resources
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Debug\AmarothLauncher.MainWindow.resources
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Debug\AmarothLauncher.Properties.Resources.resources
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Debug\AmarothLauncher.csproj.GenerateResource.cache
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Debug\AmarothLauncher.exe
+C:\Users\MRW\Desktop\WoWMod-Launcher-master\AmarothLauncher\obj\Debug\AmarothLauncher.pdb

@@ -20,7 +20,7 @@ namespace AmarothLauncher.GUI
         }
 
         /// <summary>
-        /// Sets values of window elements to values set in config.
+        /// 将窗口元素的值设置为在配置中设置的值。
         /// </summary>
         private void LoadConfig()
         {
@@ -39,8 +39,8 @@ namespace AmarothLauncher.GUI
         }
 
         /// <summary>
-        /// Updates a list by getting a new version of changelog.
-        /// Hopefully its not too slowing for slow internet connection owners, feel free to comment its calling in listBox_ItemCheck event method.
+        /// 通过获取新版本的changelog更新列表。
+        /// 希望它不会对网速慢的用户太慢，请随意评论它在listBox_ItemCheck event method中的调用。
         /// </summary>
         private void UpdateList()
         {
@@ -63,7 +63,7 @@ namespace AmarothLauncher.GUI
         }
 
         /// <summary>
-        /// Displays detailed information about selected entry, if any entry is selected.
+        /// 如果选择了任何条目，则显示有关选定条目的详细信息。
         /// </summary>
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
